@@ -1,34 +1,14 @@
-import { useEffect, useState } from "react";
+"use client";
+
+import { useState } from "react";
 import { Mail, Send, Github, Linkedin } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const { toast } = useToast();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = document.getElementById("contact");
-    if (section) observer.observe(section);
-
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -39,15 +19,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-
     // Reset form
     setFormData({
       name: "",
@@ -57,7 +28,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding relative">
+    <section id="contact" className="section-padding relative bg-bg-primary">
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary/10 rounded-full filter blur-3xl opacity-30 animate-float"></div>
       </div>
@@ -77,17 +48,11 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div
-            className={`transition-all duration-700 ${
-              isVisible
-                ? "opacity-100 transform translate-y-0"
-                : "opacity-0 transform translate-y-20"
-            }`}
-          >
+          <div className="transition-all duration-700">
             <div className="glass-panel rounded-xl p-8 h-full">
               <div className="flex items-center mb-6">
                 <Mail className="text-primary mr-3" size={24} />
-                <h3 className="text-xl font-semibold">Contact Information</h3>
+                <h3 className="text-xl font-semibold text-white">Contact Information</h3>
               </div>
 
               <p className="text-white/70 mb-8">
@@ -113,7 +78,7 @@ const Contact = () => {
                   <h4 className="text-sm font-medium text-white/50 mb-2">
                     Location
                   </h4>
-                  <p>San Francisco, CA</p>
+                  <p className="text-white">India , Lucknow</p>
                 </div>
 
                 <div>
@@ -126,14 +91,14 @@ const Contact = () => {
                       className="glass-panel p-3 rounded-full hover:bg-white/10 transition-colors duration-300"
                       aria-label="GitHub Profile"
                     >
-                      <Github size={20} />
+                      <Github size={20} className="text-white"/>
                     </a>
                     <a
                       href="#"
                       className="glass-panel p-3 rounded-full hover:bg-white/10 transition-colors duration-300"
                       aria-label="LinkedIn Profile"
                     >
-                      <Linkedin size={20} />
+                      <Linkedin size={20} className="text-white"/>
                     </a>
                   </div>
                 </div>
@@ -141,18 +106,12 @@ const Contact = () => {
             </div>
           </div>
 
-          <div
-            className={`transition-all duration-700 delay-300 ${
-              isVisible
-                ? "opacity-100 transform translate-y-0"
-                : "opacity-0 transform translate-y-20"
-            }`}
-          >
+          <div className="transition-all duration-700 delay-300 ">
             <form
               onSubmit={handleSubmit}
               className="glass-panel rounded-xl p-8"
             >
-              <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+              <h3 className="text-xl font-semibold mb-6 text-white">Send a Message</h3>
 
               <div className="space-y-6">
                 <div>
@@ -214,7 +173,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90"
+                  className="w-full cursor-pointer flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90"
                 >
                   Send Message
                   <Send size={18} className="ml-2" />

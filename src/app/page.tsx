@@ -7,6 +7,7 @@ import Navbar from "../../components/Navbar";
 import Projects from "../../components/Projects";
 import Skills from "../../components/Skills";
 
+
 const Home = () => {
   return (
     <div>
@@ -16,7 +17,7 @@ const Home = () => {
       <Skills />
       <Approach />
       <Projects />
-      {/* <Contact /> */}
+      <Contact />
       {/* <Footer /> */}
     </div>
   );
