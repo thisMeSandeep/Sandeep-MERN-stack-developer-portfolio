@@ -27,7 +27,7 @@ const About = () => {
                   className="w-full h-full bg-cover bg-center"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')",
+                      "url('/profile.jpg')",
                   }}
                 ></div>
               </div>

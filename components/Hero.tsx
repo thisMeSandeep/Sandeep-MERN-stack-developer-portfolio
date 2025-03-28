@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center  bg-bg-primary relative">
+    <section id="home" className="min-h-screen flex items-center justify-center  bg-bg-primary relative">
       {/* grid background */}
       <div className="absolute inset-0 grid-pattern" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_30%,rgba(0,0,0,0.6)_80%)]" />
