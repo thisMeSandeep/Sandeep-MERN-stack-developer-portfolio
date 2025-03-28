@@ -3,7 +3,7 @@ import { Zap } from "lucide-react";
 const Approach = () => {
   return (
     <div className="bg-bg-primary py-10">
-      <div className="w-7xl mx-auto   rounded-xl p-8 text-center transition-all duration-700 relative overflow-hidden ">
+      <div className="max-w-7xl mx-auto   rounded-xl p-8 text-center transition-all duration-700 relative overflow-hidden ">
         {/* background */}
         <div className="absolute inset-0 grid-pattern" />
         <div className="absolute inset-0 bg-primary/20" />
