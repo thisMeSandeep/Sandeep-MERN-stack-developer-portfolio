@@ -35,6 +35,10 @@
     @apply bg-white/5 backdrop-blur-md border border-white/10 transition-colors duration-300 hover:bg-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(79,70,229,0.3)];
   }
 
+  .gradient-card {
+    @apply bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-md border border-white/10;
+  }
+
   .section-padding {
     @apply px-6 py-24 md:px-12 xl:px-24;
   }
