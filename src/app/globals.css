@@ -39,6 +39,10 @@
     @apply bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-md border border-white/10;
   }
 
+  .gradient-border {
+    @apply relative border-0 before:absolute before:-inset-[1px] before:rounded-[inherit] before:p-[1px] before:bg-gradient-to-r before:from-primary/40 before:to-primary/40 before:-z-10;
+  }
+
   .section-padding {
     @apply px-6 py-24 md:px-12 xl:px-24;
   }
