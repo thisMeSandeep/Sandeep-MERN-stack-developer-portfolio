@@ -18,7 +18,7 @@ const Home = () => {
       <Approach />
       <Projects />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
