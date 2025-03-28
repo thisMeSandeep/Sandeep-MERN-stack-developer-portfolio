@@ -11,8 +11,8 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      {/* <Hero /> */}
-      {/* <About /> */}
+      <Hero />
+      <About />
       {/* <LogoTicker /> */}
       {/* <Skills /> */}
       {/* <Projects /> */}

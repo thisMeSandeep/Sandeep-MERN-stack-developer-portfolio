@@ -33,7 +33,7 @@ const Navbar = (): React.JSX.Element => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-bg-primary ${
         isScrolled
           ? "bg-bg-primary backdrop-blur-lg shadow-md"
-          : "bg-bg-primary"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">

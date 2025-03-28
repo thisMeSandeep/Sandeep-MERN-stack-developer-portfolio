@@ -12,10 +12,10 @@
 @layer utilities {
   .grid-pattern {
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.05) 1px,
+        rgba(255, 255, 255, 0.02) 1px,
         transparent 1px
       ),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
@@ -25,6 +25,14 @@
 
   .glass-panel {
     @apply backdrop-blur-xl bg-white/[0.03] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+  .glass-hero-card {
+    @apply backdrop-blur-xl bg-white/[0.03] shadow-[0_4px_20px_rgba(79,70,229,0.15)];
+  }
+
+  .cyber-box {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 transition-colors duration-300 hover:bg-white/10 hover:border-primary/30 hover:shadow-[0_0_15px_rgba(79,70,229,0.3)];
   }
 
   .section-padding {
