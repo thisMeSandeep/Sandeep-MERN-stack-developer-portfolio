@@ -1,62 +1,7 @@
 "use client";
 
-// import { useEffect, useState } from "react";
 import { ExternalLink, Github, Sparkles, Code, Layers } from "lucide-react";
-
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce solution built with the MERN stack. Features include product search, filtering, user authentication, shopping cart, payment processing with Stripe, and real-time order tracking.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Redux Toolkit",
-      "Stripe API",
-      "Socket.IO",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Real-time Chat Application",
-    description:
-      "A feature-rich chat application with real-time messaging capabilities. Users can create chat rooms, send direct messages, share media, and receive instant notifications.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Socket.IO",
-      "JWT Authentication",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    github: "#",
-    live: "#",
-  },
-  {
-    title: "Project Management Dashboard",
-    description:
-      "A comprehensive project management tool for teams. Features include task assignment, progress tracking, deadline management, and real-time collaboration.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "Zustand",
-      "TailwindCSS",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    github: "#",
-    live: "#",
-  },
-];
+import projects from "../data/projects";
 
 const Projects = () => {
   // const [activeProject, setActiveProject] = useState(0);
@@ -104,7 +49,13 @@ const Projects = () => {
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/0 after:to-background/90"
                   style={{ backgroundImage: `url(${project.image})` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
+                {/* Show on hover for large screens, always visible on small screens */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent 
+                opacity-100 lg:opacity-0 lg:group-hover:opacity-100 
+                transition-opacity duration-300 flex items-center justify-center"
+                >
                   <div className="flex space-x-4">
                     <a
                       href={project.github}
@@ -121,6 +72,7 @@ const Projects = () => {
                       <ExternalLink size={20} className="text-white" />
                     </a>
                   </div>
+                  {/* hover ends here */}
                 </div>
               </div>
               <div className="p-6 relative">
@@ -149,6 +101,7 @@ const Projects = () => {
           ))}
         </div>
 
+        {/* eplore more  button */}
         <div className="mt-12 text-center">
           <a
             href="#"
