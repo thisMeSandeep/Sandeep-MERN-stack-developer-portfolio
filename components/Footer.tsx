@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -29,13 +30,13 @@ const Footer = () => {
           {/* Center Links */}
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mb-8 md:mb-0">
             {["About", "Skills", "Projects", "Contact"].map((item) => (
-              <a
+              <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 className="text-white/70 hover:text-white transition-colors"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -51,7 +52,7 @@ const Footer = () => {
                   label: "Email",
                 },
               ].map(({ icon: Icon, href, label }) => (
-                <a
+                <Link
                   key={label}
                   href={href}
                   className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
@@ -60,7 +61,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                 >
                   <Icon size={20} />
-                </a>
+                </Link>
               ))}
               <button
                 onClick={scrollToTop}

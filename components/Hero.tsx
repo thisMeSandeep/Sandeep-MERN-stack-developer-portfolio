@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center  bg-bg-primary relative">
       {/* grid background */}
       <div className="absolute inset-0 grid-pattern" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_30%,rgba(0,0,0,0.6)_80%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_30%,rgba(0,0,0,0.6)_90%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15)_20%,rgba(0,0,0,0.9)_90%)] sm:bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.2)_20%,rgba(0,0,0,0.85)_90%)]" />
 
       {/* content */}
@@ -28,7 +28,7 @@ const Hero = () => {
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-text-secondary mb-10  text-center ">
+        <p className="text-lg md:text-xl text-text-secondary mb-10 px-4  text-center ">
           Specializing in modern web technologies and MERN stack
           <br className="hidden md:block" /> with a passion for creating
           seamless user experiences.

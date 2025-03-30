@@ -1,10 +1,20 @@
 "use client";
 
-import { ExternalLink, Github, Sparkles, Code, Layers } from "lucide-react";
+import { ExternalLink, Github, Sparkles, Code} from "lucide-react";
+import Link from "next/link";
 import projects from "../data/projects";
+import { useState } from "react";
 
 const Projects = () => {
-  // const [activeProject, setActiveProject] = useState(0);
+  const [activeProject, setActiveProject] = useState<number>(3);
+
+  const handleActiveProject = () => {
+    if (activeProject === 3) {
+      setActiveProject(9);
+    } else {
+      setActiveProject(3);
+    }
+  };
 
   return (
     <section
@@ -35,7 +45,7 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.slice(0, activeProject).map((project) => (
             <div
               key={project.title}
               className="gradient-card rounded-xl overflow-hidden group transition-all duration-700 hover:shadow-[0_0_25px_rgba(79,70,229,0.2)] relative"
@@ -57,20 +67,20 @@ const Projects = () => {
                 transition-opacity duration-300 flex items-center justify-center"
                 >
                   <div className="flex space-x-4">
-                    <a
+                    <Link
                       href={project.github}
                       className="cyber-box p-3 rounded-full hover:bg-white/20 transition-colors duration-300 hover:scale-110 transform hover:shadow-[0_0_15px_rgba(79,70,229,0.3)]"
                       aria-label="GitHub Repository"
                     >
                       <Github size={20} className="text-white" />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href={project.live}
                       className="cyber-box p-3 rounded-full hover:bg-white/20 transition-colors duration-300 hover:scale-110 transform hover:shadow-[0_0_15px_rgba(79,70,229,0.3)]"
                       aria-label="Live Demo"
                     >
                       <ExternalLink size={20} className="text-white" />
-                    </a>
+                    </Link>
                   </div>
                   {/* hover ends here */}
                 </div>
@@ -102,18 +112,19 @@ const Projects = () => {
         </div>
 
         {/* eplore more  button */}
-        <div className="mt-12 text-center">
-          <a
-            href="#"
-            className="inline-flex items-center cyber-box px-6 py-3 rounded-full text-white font-medium transition-all duration-300 hover:bg-white/5 hover:shadow-[0_0_15px_rgba(79,70,229,0.3)] group"
+        <div className="mt-12 text-center ">
+          <button
+            type="button"
+            onClick={handleActiveProject}
+            className="inline-flex items-center cyber-box px-6 py-3 rounded-full cursor-pointer text-white font-medium transition-all duration-300 hover:bg-white/5 hover:shadow-[0_0_15px_rgba(79,70,229,0.3)] group"
           >
             <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">
-              Explore More Projects
+              {activeProject === 3 ? "Explore More Projects" : "Close"}
             </span>
-            <div className="p-1 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 group-hover:scale-110 transition-transform duration-300">
+            <span className="p-1 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
               <ExternalLink size={18} />
-            </div>
-          </a>
+            </span>
+          </button>
         </div>
       </div>
     </section>

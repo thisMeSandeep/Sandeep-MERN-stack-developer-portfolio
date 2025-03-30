@@ -14,7 +14,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     github: "https://github.com/thisMeSandeep/E-commerce-Website-MERN",
-    live: "https://omilo-chat-app.vercel.app",
+    live: "https://e-commerce-website-mern-one.vercel.app/",
   },
   {
     title: "Real-time Chat Application",
