@@ -24,6 +24,10 @@ const Approach = () => {
             enables me to build modern applications from concept to deployment,
             always prioritizing clean code , performance and user experience.
           </p>
+          <span className="text-white text-xl font-semibold mt-4">
+            I quickly adapt to new technologies and continuously expand my skill
+            set.
+          </span>
         </div>
       </div>
     </div>

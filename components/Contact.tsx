@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Send, Github, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,13 +53,14 @@ const Contact = () => {
             <div className="glass-panel rounded-xl p-8 h-full">
               <div className="flex items-center mb-6">
                 <Mail className="text-primary mr-3" size={24} />
-                <h3 className="text-xl font-semibold text-white">Contact Information</h3>
+                <h3 className="text-xl font-semibold text-white">
+                  Contact Information
+                </h3>
               </div>
 
               <p className="text-white/70 mb-8">
-                I'm currently available for freelance work, full-time positions,
-                and consulting opportunities. Let's create something amazing
-                together.
+                I'm currently open to internships, full-time positions, and
+                freelance opportunities. Let's build something amazing together!
               </p>
 
               <div className="space-y-6">
@@ -67,10 +69,10 @@ const Contact = () => {
                     Email
                   </h4>
                   <a
-                    href="mailto:sandeep@example.com"
+                    href="mailto:snayal50@gmail.com"
                     className="text-white hover:text-primary transition-colors duration-300"
                   >
-                    sandeep@example.com
+                    snayal50@gmail.com
                   </a>
                 </div>
 
@@ -85,33 +87,40 @@ const Contact = () => {
                   <h4 className="text-sm font-medium text-white/50 mb-4">
                     Connect
                   </h4>
+
+                  {/* links */}
                   <div className="flex space-x-4">
-                    <a
-                      href="#"
+                    <Link
+                      href="https://github.com/thisMeSandeep"
                       className="glass-panel p-3 rounded-full hover:bg-white/10 transition-colors duration-300"
                       aria-label="GitHub Profile"
+                      target="_blank"
                     >
-                      <Github size={20} className="text-white"/>
-                    </a>
-                    <a
-                      href="#"
+                      <Github size={20} className="text-white" />
+                    </Link>
+                    <Link
+                      href="https://www.linkedin.com/in/sandeepsinghnayal/"
                       className="glass-panel p-3 rounded-full hover:bg-white/10 transition-colors duration-300"
                       aria-label="LinkedIn Profile"
+                      target="_blank"
                     >
-                      <Linkedin size={20} className="text-white"/>
-                    </a>
+                      <Linkedin size={20} className="text-white" />
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* form */}
           <div className="transition-all duration-700 delay-300 ">
             <form
               onSubmit={handleSubmit}
               className="glass-panel rounded-xl p-8"
             >
-              <h3 className="text-xl font-semibold mb-6 text-white">Send a Message</h3>
+              <h3 className="text-xl font-semibold mb-6 text-white">
+                Send a Message
+              </h3>
 
               <div className="space-y-6">
                 <div>

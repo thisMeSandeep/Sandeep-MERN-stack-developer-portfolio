@@ -34,21 +34,21 @@ const projects = [
     live: "#",
   },
   {
-    title: "Project Management Dashboard",
+    title: "AI car search",
     description:
-      "A comprehensive project management tool for teams. Features include task assignment, progress tracking, deadline management, and real-time collaboration.",
+      "An AI-driven car search platform that helps users find their ideal vehicle with AI recommendations.",
     technologies: [
       "Next.js",
-      "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "Zustand",
+      "Supabase",
+      "Clerk Auth",
+      "Gemini API",
       "TailwindCSS",
     ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    github: "#",
-    live: "#",
+    image: "/aicar.png",
+    github: "https://github.com/thisMeSandeep/vehiql-Next-js-app",
+    live: "https://vehiql-next-js-app.vercel.app/",
   },
   {
     title: "Prescripto- Online Doctor appoitment website",

@@ -31,7 +31,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <span className="text-sm tracking-wider uppercase inline-block mb-3 glass-hero-card px-4 py-1 rounded-full">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-primary ">
-              <Sparkles size={14} className="inline mr-2" />
+              <Sparkles size={14} className="inline mr-2 text-white" />
               Portfolio
             </span>
           </span>
@@ -71,6 +71,7 @@ const Projects = () => {
                       href={project.github}
                       className="cyber-box p-3 rounded-full hover:bg-white/20 transition-colors duration-300 hover:scale-110 transform hover:shadow-[0_0_15px_rgba(79,70,229,0.3)]"
                       aria-label="GitHub Repository"
+                      target="_blank"
                     >
                       <Github size={20} className="text-white" />
                     </Link>
@@ -78,6 +79,7 @@ const Projects = () => {
                       href={project.live}
                       className="cyber-box p-3 rounded-full hover:bg-white/20 transition-colors duration-300 hover:scale-110 transform hover:shadow-[0_0_15px_rgba(79,70,229,0.3)]"
                       aria-label="Live Demo"
+                      target="_blank"
                     >
                       <ExternalLink size={20} className="text-white" />
                     </Link>

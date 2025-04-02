@@ -44,11 +44,11 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-4 mb-4">
               {[
-                { icon: Github, href: "#", label: "GitHub Profile" },
-                { icon: Linkedin, href: "#", label: "LinkedIn Profile" },
+                { icon: Github, href: "https://github.com/thisMeSandeep", label: "GitHub Profile" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/sandeepsinghnayal/", label: "LinkedIn Profile" },
                 {
                   icon: Mail,
-                  href: "mailto:sandeep@example.com",
+                  href: "mailto:snayal50@gmail.com",
                   label: "Email",
                 },
               ].map(({ icon: Icon, href, label }) => (
