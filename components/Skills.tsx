@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Code,
   Code2,
@@ -12,6 +14,7 @@ import {
   Boxes,
   Sparkles,
 } from "lucide-react";
+import { motion } from "motion/react";
 
 const skillsCategories = [
   {
@@ -107,20 +110,34 @@ const Skills = () => {
         </div>
 
         {/* Logo Ticker */}
-        <div className="mb-16 overflow-hidden rounded-xl backdrop-blur-sm bg-white/[0.01] p-4 border border-white/5">
-          <div className="flex space-x-12 whitespace-nowrap">
-            {skillLogos.map((logo, index) => (
-              <div
-                key={`${logo.name}-${index}`}
-                className="flex flex-col items-center glass-panel px-6 py-4 rounded-lg min-w-[120px] hover:scale-105 transition-all duration-300 hover:shadow-[0_0_10px_rgba(79,70,229,0.2)]"
-              >
-                <div className="mb-2">{logo.icon}</div>
-                <span className="text-sm font-medium text-text-primary">
-                  {logo.name}
-                </span>
-              </div>
-            ))}
-          </div>
+        <div className="mb-16 overflow-hidden rounded-xl backdrop-blur-sm bg-white/[0.01] p-4 border border-white/5 relative">
+          <motion.div
+            initial={{ translateX: 0 }}
+            animate={{ translateX: "-50%" }} 
+            transition={{
+              ease: "linear",
+              duration: 15, 
+              repeat: Infinity,
+            }}
+            className="flex flex-none gap-8 lg:gap-16 pr-8 lg:pr-16"
+          >
+            {[...skillLogos, ...skillLogos].map(
+              (
+                logo,
+                index // Duplicate items
+              ) => (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="flex flex-col items-center glass-panel px-6 py-4 rounded-lg min-w-[120px] hover:scale-105 transition-all duration-300 hover:shadow-[0_0_10px_rgba(79,70,229,0.2)]"
+                >
+                  <div className="mb-2">{logo.icon}</div>
+                  <span className="text-sm font-medium text-text-primary">
+                    {logo.name}
+                  </span>
+                </div>
+              )
+            )}
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
