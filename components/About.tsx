@@ -39,17 +39,15 @@ const About = () => {
               </h3>
               <p className="text-white/70 mb-6">
                 I'm a passionate Full Stack Developer with expertise in modern
-                web technologies and real-time applications. With a strong
+                web technologies with a strong
                 foundation in the MERN stack and a love for clean, efficient
-                code, I specialize in building scalable, responsive applications
+                code, I specialize in building functional responsive applications
                 that deliver exceptional user experiences.
               </p>
               <p className="text-white/70 mb-6">
                 My approach combines technical excellence with creative
                 problem-solving, allowing me to tackle complex challenges and
-                transform ideas into reality. I'm particularly interested in
-                real-time applications, e-commerce solutions, and creating
-                intuitive interfaces that users love.
+                transform ideas into reality.I'm passionate about building functional responsive web applications, enhancing user experiences, and solving real-world problems with technology.
               </p>
 
               <div className="flex flex-col md:flex-row gap-4">
@@ -59,13 +57,13 @@ const About = () => {
                 >
                   Get In Touch
                 </Link>
-                <a
-                  href="#"
-                  className="bg-primary text-primary-foreground text-nowrap  text-center px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-primary/90"
+                <Link
+                  href="/resume.pdf"
+                  className="bg-primary text-white text-nowrap  text-center px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-purple-600"
                   download
                 >
                   Download Resume
-                </a>
+                </Link>
               </div>
             </div>
           </div>
