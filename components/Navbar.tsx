@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 
 const navItems: string[] = ["Home", "About", "Skills", "Projects", "Contact"];
 
@@ -47,66 +48,66 @@ const Navbar = (): React.JSX.Element => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300"
                 >
                   {item}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* Social nav Icons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="#"
+            <Link
+              href="https://github.com/thisMeSandeep"
               className="text-white/70 hover:text-white transition-colors duration-300"
               aria-label="GitHub"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Github size={20} />
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/sandeepsinghnayal/"
               className="text-white/70 hover:text-white transition-colors duration-300"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Linkedin size={20} />
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/resume.pdf"
               className="glass-panel px-4 py-2 rounded-full text-sm font-medium text-white transition-all duration-300 hover:bg-white/10"
               download
             >
               Resume
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <a
-              href="#"
+            <Link
+              href="https://github.com/thisMeSandeep"
               className="text-white/70 hover:text-white transition-colors duration-300"
               aria-label="GitHub"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Github size={20} />
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/sandeepsinghnayal/"
               className="text-white/70 hover:text-white transition-colors duration-300"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Linkedin size={20} />
-            </a>
+            </Link>
             <button
               onClick={toggleMobileMenu}
               className="text-white/70 hover:text-white focus:outline-none"
@@ -134,23 +135,23 @@ const Navbar = (): React.JSX.Element => {
           >
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   className="block text-base font-medium text-white/70 hover:text-white transition-colors duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#"
+              <Link
+                href="/resume.pdf"
                 className="block text-base font-medium text-primary hover:text-primary/80 transition-colors duration-300"
                 download
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Resume
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
