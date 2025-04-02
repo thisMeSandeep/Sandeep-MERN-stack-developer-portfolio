@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 const navItems: string[] = ["Home", "About", "Skills", "Projects", "Contact"];
 
@@ -31,9 +32,7 @@ const Navbar = (): React.JSX.Element => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${
-        isScrolled
-          ? " backdrop-blur-lg shadow-md"
-          : "bg-transparent"
+        isScrolled ? " backdrop-blur-lg shadow-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -124,30 +123,38 @@ const Navbar = (): React.JSX.Element => {
       </div>
 
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden glass-panel ">
-          <div className="px-6 py-4 space-y-4">
-            {navItems.map((item) => (
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -50, scaleY: 0.9 }}
+            animate={{ opacity: 1, y: 0, scaleY: 1 }}
+            exit={{ opacity: 0, y: -50, scaleY: 0.9 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden glass-panel "
+          >
+            <div className="px-6 py-4 space-y-4">
+              {navItems.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="block text-base font-medium text-white/70 hover:text-white transition-colors duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="block text-base font-medium text-white/70 hover:text-white transition-colors duration-300"
+                href="#"
+                className="block text-base font-medium text-primary hover:text-primary/80 transition-colors duration-300"
+                download
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {item}
+                Resume
               </a>
-            ))}
-            <a
-              href="#"
-              className="block text-base font-medium text-primary hover:text-primary/80 transition-colors duration-300"
-              download
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Resume
-            </a>
-          </div>
-        </div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
