@@ -20,6 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    alert("Please use email , this feature is yet to be integrated");
     // Reset form
     setFormData({
       name: "",
@@ -72,7 +73,7 @@ const Contact = () => {
                     href="mailto:snayal50@gmail.com"
                     className="text-white hover:text-primary transition-colors duration-300"
                   >
-                    snayal50@gmail.com
+                    sandeepnayal50@gmail.com
                   </a>
                 </div>
 
