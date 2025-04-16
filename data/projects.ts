@@ -17,21 +17,23 @@ const projects = [
     live: "https://e-commerce-website-mern-one.vercel.app/",
   },
   {
-    title: "Real-time Chat Application",
+    title: "Fundly - personal finance managemnet tool",
     description:
-      "A feature-rich chat application with real-time messaging capabilities. Users can create chat rooms, send direct messages, share media, and receive instant notifications.",
+      "A smart and intuitive finance management app that helps users track income and expenses, categorize transactions, view insightful analytics, and gain control over their financial goals.",
     technologies: [
+      "TypeScript",
       "React",
+      "Tanstack query",
       "Node.js",
       "Express",
-      "MongoDB",
-      "Socket.IO",
+      "Postgress",
+      "Prisma",
       "JWT Authentication",
+      "Zod"
     ],
-    image:
-      "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    github: "#",
-    live: "#",
+    image:"/fundly.png",
+    github: "https://github.com/thisMeSandeep/Eudaimo-personal-finance-managment-app",
+    live: "https://eudaimo-personal-finance-managment-app-rqzk.vercel.app/",
   },
   {
     title: "AI car search",
