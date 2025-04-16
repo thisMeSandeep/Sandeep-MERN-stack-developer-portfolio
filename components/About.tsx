@@ -13,7 +13,7 @@ const About = () => {
             About Me
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold text-white ">
             Who I Am
           </h2>
         </div>

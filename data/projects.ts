@@ -8,7 +8,9 @@ const projects = [
       "Node.js",
       "Express",
       "MongoDB",
+      "Mongoose",
       "Zustand",
+      "JWT Authentication",
       "Razorpay",
     ],
     image:
@@ -29,7 +31,8 @@ const projects = [
       "Postgress",
       "Prisma",
       "JWT Authentication",
-      "Zod"
+      "Zod",
+      "Gemini"
     ],
     image:"/fundly.png",
     github: "https://github.com/thisMeSandeep/Eudaimo-personal-finance-managment-app",

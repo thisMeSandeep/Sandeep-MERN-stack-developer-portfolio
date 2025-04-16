@@ -2,42 +2,88 @@
 
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
-import { motion } from "motion/react"; // ✅ Corrected Import
+import { motion } from "motion/react"; 
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-bg-primary relative"
+      className="min-h-screen flex items-center justify-center bg-bg-primary relative overflow-hidden"
     >
       {/* Grid Background */}
-      <div className="absolute inset-0 grid-pattern" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_30%,rgba(0,0,0,0.6)_90%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15)_20%,rgba(0,0,0,0.9)_90%)] sm:bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.2)_20%,rgba(0,0,0,0.85)_90%)]" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 grid-pattern"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.1)_30%,rgba(0,0,0,0.6)_90%)]"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, delay: 0.3 }}
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.15)_20%,rgba(0,0,0,0.9)_90%)] sm:bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.2)_20%,rgba(0,0,0,0.85)_90%)]"
+      />
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto flex flex-col items-center justify-center z-10">
-        <span className="text-sm md:text-base tracking-wider uppercase inline-block mb-4 glass-hero-card px-4 py-2 rounded-full border border-white">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="max-w-4xl mx-auto flex flex-col items-center justify-center z-10"
+      >
+        <motion.span
+          variants={fadeInUp}
+          className="text-sm md:text-base tracking-wider uppercase inline-block mb-4 glass-hero-card px-4 py-2 rounded-full border border-white"
+        >
           <span className="mx-auto bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-primary">
             Full Stack Developer
           </span>
-        </span>
+        </motion.span>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight tracking-tighter mb-6 text-text-primary text-center">
+        <motion.h1
+          variants={fadeInUp}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight tracking-tighter mb-6 text-text-primary text-center"
+        >
           Hi, I'm{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
             Sandeep
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-lg md:text-xl text-text-secondary mb-10 px-4 text-center">
+        <motion.p
+          variants={fadeInUp}
+          className="text-lg md:text-xl text-text-secondary mb-10 px-4 text-center"
+        >
           Specializing in modern web technologies and MERN stack
           <br className="hidden md:block" /> with a passion for creating
           seamless user experiences.
-        </p>
+        </motion.p>
 
         {/* Links */}
-        <div className="flex items-center gap-4 mb-10">
+        <motion.div
+          variants={fadeInUp}
+          className="flex items-center gap-4 mb-10"
+        >
           {/* view projects */}
           <motion.div
             whileHover={{
@@ -64,17 +110,21 @@ const Hero = () => {
             whileTap={{ scale: 0.9 }}
             className="rounded-full"
           >
-            <Link
+            <a
               href="/resume.pdf"
+              download
               className="px-6 py-3 rounded-full text-gradient font-medium border glass-panel border-white/10 cursor-pointer inline-block"
             >
               Download Resume
-            </Link>
+            </a>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Scroll Down */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <motion.div
+          variants={fadeInUp}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        >
           <a
             href="#about"
             className="flex flex-col items-center text-white/50 hover:text-white transition-colors duration-300 group"
@@ -89,8 +139,8 @@ const Hero = () => {
               />
             </div>
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

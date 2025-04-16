@@ -9,7 +9,7 @@ import Skills from "../../components/Skills";
 
 const Home = () => {
   return (
-    <div className="scrollable">
+    <div className="h-screen no-scrollbar">
       <Navbar />
       <Hero />
       <About />

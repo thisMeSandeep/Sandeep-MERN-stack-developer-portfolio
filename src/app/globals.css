@@ -54,4 +54,14 @@ html {
   .shadow-glow {
     box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
   }
+
+  .no-scrollbar {
+    overflow: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; 
+  }
 }

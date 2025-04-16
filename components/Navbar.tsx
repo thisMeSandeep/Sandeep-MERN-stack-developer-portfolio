@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X, Github, Linkedin } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
@@ -8,34 +8,14 @@ import Link from "next/link";
 const navItems: string[] = ["Home", "About", "Skills", "Projects", "Contact"];
 
 const Navbar = (): React.JSX.Element => {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${
-        isScrolled ? " backdrop-blur-lg shadow-md" : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300  backdrop-blur-lg shadow-md">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0 animate-fade-in">
@@ -81,9 +61,14 @@ const Navbar = (): React.JSX.Element => {
             </Link>
             <Link
               href="/resume.pdf"
-              className="glass-panel px-4 py-2 rounded-full text-sm font-medium text-white transition-all duration-300 hover:bg-white/10"
               download
+              className="relative px-3 py-2 rounded-lg font-medium text-sm text-white bg-gradient-to-b from-[#190D2E] to-[#4A208A] shadow-[0px_0px_12px_#8C45FF]"
             >
+              <div className="absolute inset-0 ">
+                <div className="border rounded-lg border-white/20 absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]"></div>
+                <div className="border rounded-lg absolute inset-0 border-white/40  [mask-image:linear-gradient(to_top,black,transparent)]"></div>
+                <div className="absolute inset-0 shadow-[0_0_10px_rgb(140,69,255,.7)_inset] rounded-lg"></div>
+              </div>
               Resume
             </Link>
           </div>

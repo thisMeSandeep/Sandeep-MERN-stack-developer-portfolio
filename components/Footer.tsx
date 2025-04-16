@@ -1,15 +1,10 @@
 "use client";
 
-import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+
 
   return (
     <footer className="relative overflow-hidden py-12 px-6 md:px-12 text-white bg-bg-secondary border-t border-white/10">
@@ -48,7 +43,7 @@ const Footer = () => {
                 { icon: Linkedin, href: "https://www.linkedin.com/in/sandeepsinghnayal/", label: "LinkedIn Profile" },
                 {
                   icon: Mail,
-                  href: "mailto:snayal50@gmail.com",
+                  href: "mailto:sandeepnayal50@gmail.com",
                   label: "Email",
                 },
               ].map(({ icon: Icon, href, label }) => (
@@ -63,13 +58,7 @@ const Footer = () => {
                   <Icon size={20} />
                 </Link>
               ))}
-              <button
-                onClick={scrollToTop}
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label="Scroll to top"
-              >
-                <ArrowUp size={20} />
-              </button>
+              
             </div>
             <p className="text-white/70 text-sm">
               © {new Date().getFullYear()} Sandeep. All rights reserved.
